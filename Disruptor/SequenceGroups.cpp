@@ -85,6 +85,8 @@ namespace Disruptor
             }
         }
 
+        sequences.resize(oldSize-numToRemove);
+
         return numToRemove != 0;
     }
 
