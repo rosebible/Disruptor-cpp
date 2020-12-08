@@ -34,8 +34,8 @@ namespace Disruptor
 
         m_threads.emplace_back([this, task{ move(task) }] () mutable
         {
-            while(m_started)
-            {
+            //while(m_started)  //delete by Mark
+            //{
                 try
                 {
                     task();
@@ -43,7 +43,7 @@ namespace Disruptor
                 catch (...)
                 {
                 }
-            }
+            //}
         });
 
         return result;
